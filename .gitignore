@@ -1,0 +1,7 @@
+#python cache:
+**/__pycache__
+**/.ipynb_checkpoints
+**/.virtual_documents
+# local scripts:
+**/ignore_*
+**/local_*
