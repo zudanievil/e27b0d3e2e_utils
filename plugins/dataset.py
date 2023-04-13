@@ -5,8 +5,9 @@ import skimage.transform as tf
 from typing import *
 from enum import Enum
 
-
-from fp import dispatch, reduce
+su = sys.startup
+fp, = su.require_plugins("fp")
+from fp import Dispatch, reduce
 import operator
 
 class pt(NamedTuple):
@@ -81,7 +82,7 @@ def affine(
     ]).reshape(3, 3))
 
 
-@dispatch.new(LSegment)
+@Dispatch.new(LSegment)
 def render(x: LSegment, N: int) -> np.array:
     return np.linspace(x.start, x.stop, N)    
 
